@@ -13,7 +13,7 @@ int main()
 	string occup = "";
 
 	/* The Problem is that the choice cases when getting to case 3 
-	the program enters infinite loop
+	the program enters infinite loop 
 
 	while (choice != -1)
 	{
