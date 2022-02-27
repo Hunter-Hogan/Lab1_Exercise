@@ -12,6 +12,9 @@ int main()
 	string age = "";
 	string occup = "";
 
+	/* The Problem is that the choice cases when getting to case 3 
+	the program enters infinite loop
+
 	while (choice != -1)
 	{
 		cout << "-1: Exit\n";
@@ -21,7 +24,7 @@ int main()
 		cin >> choice;
 
 		/*if (choice == -1)
-			break;*/
+			break;
 
 		switch (choice)
 		{
@@ -31,23 +34,64 @@ int main()
 			break;
 		case 2:
 			cout << "What is your Age? ";
-			cin >> age;
+			cin >> age; 
 			break;
 		case 3:
 			cout << "What is your Occupation? ";
-			cin >> occup;
+			cin >> occup;  
 			break;
 		default:
 			// Assume Invalid Menu Choice
 			cout << "Sorry that choice is not valid!";
 			break;
+
 		}
 	}
+	*/
 
+/* The solution was to get rid of the switch case and put an if case instead 
+*/
+
+cout << "-1: Exit\n";
+cout << "1: Enter Name\n";
+cout << "2: Enter Age\n";
+cout << "3: Enter Occupation\n";
+cin >> choice;
+
+while (choice != -1)
+{
+	if (choice == 1)
+	{
+		cout << "What is your Name: ";
+		cin >> name;
+		cout << "What is your next choice? ";
+		cin >> choice;
+	}
+	if (choice == 2)
+	{
+		cout << "What is your Age? ";
+		cin >> age;
+		cout << "What is your next choice? ";
+		cin >> choice;
+	}
+	if (choice == 3)
+	{
+		cout << "What is your Occupation? ";
+		cin >> occup;
+		cout << "What is your next choice? ";
+		cin >> choice;
+	}
+	if (choice > 3 || (choice < -1 || choice == 0 ))
+	{
+		cout << "Sorry that choice is not valid! \n";
+		cout << "What is your next choice? ";
+		cin >> choice;
+	}
+}
+	
 	age += 1;
-
-	cout << "Thank you for using our application, " << name << " and hope your career in " << occup << " is successful.";
-	cout << "Hope your " << age << " birthday will enjoyable and exciting";
+	cout << "Thank you for using our application, " << name << " and hope your career in " << occup << " is successful.\n";
+	cout << "Hope your " << age << " birthday will be enjoyable and exciting";
 
 	return 0;
 }
